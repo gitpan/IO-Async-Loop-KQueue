@@ -1,4 +1,7 @@
 package IO::Async::Loop::KQueue;
+BEGIN {
+  $IO::Async::Loop::KQueue::VERSION = '0.02';
+}
 
 use strict;
 use warnings;
@@ -8,7 +11,7 @@ use IO::KQueue;
 
 use base qw( IO::Async::Loop );
 
-use constant API_VERSION => '0.24';
+use constant API_VERSION => '0.33';
 
 =head1 NAME
 
@@ -16,11 +19,7 @@ IO::Async::Loop::KQueue - use C<IO::Async> with C<kqueue>
 
 =head1 VERSION
 
-Version 0.01
-
-=cut
-
-our $VERSION = '0.01';
+Version 0.02
 
 =head1 SYNOPSIS
 
@@ -59,9 +58,7 @@ sub new
 
 This method calls the kevent method, using the given timeout and processes 
 the results of that call. It returns the total number of C<IO::Async::Notifier> 
-callbacks invoked, or C<undef> if the underlying C<epoll_pwait()> method 
-returned an error. If the C<epoll_pwait()> was interrupted by a signal, 
-then 0 is returned instead.
+callbacks invoked.
 
 =cut
 

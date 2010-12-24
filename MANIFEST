@@ -1,7 +1,10 @@
 Changes
+LICENSE
 MANIFEST
+META.yml
 Makefile.PL
 README
+dist.ini
 lib/IO/Async/Loop/KQueue.pm
 t/00use.t
 t/01loop-io.t
@@ -11,4 +14,3 @@ t/04loop-idle.t
 t/05loop-child.t
 t/06loop-control.t
 t/99pod.t
-META.yml                                 Module meta-data (added by MakeMaker)
